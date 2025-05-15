@@ -69,7 +69,7 @@ export async function createDirectory(dirPath: string): Promise<boolean> {
  * @param dirPath - The path of the directory to list files from.
  * @returns A promise that resolves to an array of file names.
  */
-export async function listFilesInDirectory(dirPath: string): Promise<string[]> {
+export async function listFileNames(dirPath: string): Promise<string[]> {
     try {
         const entries = await fs.readdir(dirPath, { withFileTypes: true });
         return entries.filter(entry => entry.isFile()).map(file => file.name);
@@ -84,7 +84,7 @@ export async function listFilesInDirectory(dirPath: string): Promise<string[]> {
  * @param dirPath - The path of the directory to list directories from.
  * @returns A promise that resolves to an array of directory names.
  */
-export async function listDirectoriesInDirectory(dirPath: string): Promise<string[]> {
+export async function listDirectoryNames(dirPath: string): Promise<string[]> {
     try {
         const entries = await fs.readdir(dirPath, { withFileTypes: true });
         return entries.filter(entry => entry.isDirectory()).map(directory => directory.name);
@@ -192,7 +192,7 @@ export async function ensureDirectoryExists(
  *                                               Receives an error object if an error occurred, otherwise undefined.
  * @returns {Promise<void>} - A promise that resolves when the file has been written successfully.
  */
-export async function writeFileContent(
+export async function writeContentToFile(
     filePath: string,
     data: string | Buffer,
     encoding: BufferEncoding = "utf-8",
