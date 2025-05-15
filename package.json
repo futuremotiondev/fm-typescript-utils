@@ -1,0 +1,16 @@
+{
+  "name": "fm-typescript-utils",
+  "description": "Typescript Utility Functions",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Futuremotiondev",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "typescript": "^5.8.3"
+  }
+}
